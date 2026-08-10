@@ -385,6 +385,55 @@
     }
   }
 
+  function loadScriptOnce(src) {
+    return new Promise(function (resolve, reject) {
+      if (document.querySelector('script[data-src="' + src + '"],script[src="' + src + '"]')) {
+        resolve();
+        return;
+      }
+      var script = document.createElement("script");
+      script.src = src;
+      script.setAttribute("data-src", src);
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  function ensureCreatorStore() {
+    if (window.CreatorPublicStore && CreatorPublicStore.mergePublicFieldsAsync) {
+      return Promise.resolve();
+    }
+    var configReady = window.TrekStakFirebaseConfig
+      ? Promise.resolve()
+      : loadScriptOnce("/firebase-config.js").catch(function () {
+          return loadScriptOnce("/js/firebase-config.js");
+        });
+
+    return configReady
+      .then(function () {
+        if (window.CreatorPublicStore) return;
+        return loadScriptOnce("/creator-public-store.js").catch(function () {
+          return loadScriptOnce("/js/creator-public-store.js");
+        });
+      })
+      .catch(function (err) {
+        console.warn("Could not load creator store scripts", err);
+      });
+  }
+
+  function mergeCreator(creator) {
+    return ensureCreatorStore().then(function () {
+      if (window.CreatorPublicStore && CreatorPublicStore.mergePublicFieldsAsync) {
+        return CreatorPublicStore.mergePublicFieldsAsync(creator);
+      }
+      if (window.CreatorPublicStore && CreatorPublicStore.mergePublicFields) {
+        return Promise.resolve(CreatorPublicStore.mergePublicFields(creator));
+      }
+      return creator;
+    });
+  }
+
   function boot() {
     var route = parseRoute(resolvePath());
 
@@ -402,15 +451,7 @@
             document.title = "Not found — TrekStak Creators";
             return;
           }
-          var merge =
-            window.CreatorPublicStore && CreatorPublicStore.mergePublicFieldsAsync
-              ? CreatorPublicStore.mergePublicFieldsAsync(creator)
-              : Promise.resolve(
-                  window.CreatorPublicStore
-                    ? CreatorPublicStore.mergePublicFields(creator)
-                    : creator
-                );
-          return merge.then(function (merged) {
+          return mergeCreator(creator).then(function (merged) {
             renderCreator(merged);
           });
         }
