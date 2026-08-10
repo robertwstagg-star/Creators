@@ -66,9 +66,6 @@
     for (var i = 0; i < list.length; i++) {
       var c = list[i];
       if (c && String(c.slug).toLowerCase() === slug && c.status !== "inactive") {
-        if (window.CreatorPublicStore) {
-          return CreatorPublicStore.mergePublicFields(c);
-        }
         return c;
       }
     }
@@ -405,8 +402,17 @@
             document.title = "Not found — TrekStak Creators";
             return;
           }
-          renderCreator(creator);
-          return;
+          var merge =
+            window.CreatorPublicStore && CreatorPublicStore.mergePublicFieldsAsync
+              ? CreatorPublicStore.mergePublicFieldsAsync(creator)
+              : Promise.resolve(
+                  window.CreatorPublicStore
+                    ? CreatorPublicStore.mergePublicFields(creator)
+                    : creator
+                );
+          return merge.then(function (merged) {
+            renderCreator(merged);
+          });
         }
         renderNotFound();
         document.title = "Not found — TrekStak Creators";
