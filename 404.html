@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrekStak Creators</title>
+  <meta name="description" content="Official TrekStak creator pages — promo codes, profiles, and App Store links." />
+  <meta name="theme-color" content="#0b1424" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/finallogo.png" />
+  <!-- GitHub Pages: unknown paths like /c/chris serve this file so client routing can run -->
+  <script>
+    (function () {
+      var path = location.pathname;
+      if (path === "/404.html") return;
+      sessionStorage.setItem("creators-spa-path", path + location.search + location.hash);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=10" />
+  <link rel="stylesheet" href="/webapp-shell.css?v=1" />
+</head>
+<body>
+  <div class="page">
+    <div class="bg" aria-hidden="true">
+      <div class="bg-base"></div>
+      <div class="bg-shade"></div>
+      <div class="bg-glow"></div>
+    </div>
+
+    <header class="top">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/finallogo.png" width="40" height="40" alt="" />
+        <span>TrekStak Creators</span>
+      </a>
+    </header>
+
+    <main id="app" class="main">
+      <p class="loading">Loading…</p>
+    </main>
+
+    <footer class="foot">
+      <p>
+        <a href="https://partners.trekstakapp.com">Creator program</a>
+        ·
+        <a href="https://get.trekstakapp.com">Get the app</a>
+        ·
+        <a href="mailto:partners@trekstakapp.com">partners@trekstakapp.com</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="/webapp-shell.js?v=1" defer></script>
+  <script src="/firebase-config.js?v=3" defer></script>
+  <script src="/creator-public-store.js?v=7" defer></script>
+  <script src="/app.js?v=11" defer></script>
+  <script>
+    window.addEventListener("load", function () {
+      if (window.TrekStakWebApp && TrekStakWebApp.registerServiceWorker) {
+        TrekStakWebApp.registerServiceWorker("/sw.js");
+      }
+    });
+  </script>
+</body>
+</html>
