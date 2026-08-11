@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-10",
+  "creators": [
+    {
+      "id": "demo-chris",
+      "slug": "chris",
+      "displayName": "Chris",
+      "handle": "@chris.travels",
+      "role": "Planning Creator",
+      "bio": "Trip planning tips and TrekStak walkthroughs \u2014 without clogging my Instagram feed.",
+      "avatarUrl": "",
+      "status": "active",
+      "promoCode": "CHRIS20",
+      "discountLabel": "20% off your first year",
+      "appStoreUrl": "https://apps.apple.com/app/trekstak/id6758947030",
+      "socials": {
+        "instagram": "https://www.instagram.com/",
+        "tiktok": "",
+        "youtube": ""
+      },
+      "posts": [
+        {
+          "id": "chris-001",
+          "status": "published",
+          "publishedAt": "2026-08-08",
+          "title": "How I plan a city day in under 10 minutes",
+          "body": "Open TrekStak, pick the neighborhood, stak the stops you actually care about, and you are out the door with a route \u2014 not a 40-tab browser mess.",
+          "imageUrl": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80",
+          "imageAlt": "Traveler looking at a map outdoors",
+          "ctaLabel": "Try it with my code",
+          "showPromoCode": true,
+          "tags": [
+            "planning",
+            "tips"
+          ]
+        },
+        {
+          "id": "chris-002",
+          "status": "published",
+          "publishedAt": "2026-08-01",
+          "title": "Why I keep TrekStak off my main feed",
+          "body": "My Instagram stays travel and life. This page is where I drop TrekStak how-tos, codes, and updates so followers who want the app can find it without the spam.",
+          "imageUrl": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=80",
+          "imageAlt": "Road trip view through a car window",
+          "ctaLabel": "Get 20% off",
+          "showPromoCode": true,
+          "tags": [
+            "behind-the-scenes"
+          ]
+        }
+      ],
+      "tripRadar": [
+        {
+          "id": "trip-lisbon",
+          "city": "Lisbon",
+          "country": "Portugal",
+          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "when": "Sep 2026",
+          "status": "upcoming",
+          "why": "Food walks and neighborhood hopping \u2014 building day plans in TrekStak before I land.",
+          "focus": [
+            "food",
+            "walks",
+            "planning"
+          ],
+          "inTrekstak": true
+        },
+        {
+          "id": "trip-vancouver",
+          "city": "Vancouver",
+          "country": "Canada",
+          "flag": "\ud83c\udde8\ud83c\udde6",
+          "when": "This month",
+          "status": "currently",
+          "why": "Home base test runs: family activities and quick escapes on weekends.",
+          "focus": [
+            "family",
+            "planning"
+          ],
+          "inTrekstak": true
+        }
+      ],
+      "cityOfTheWeek": {
+        "city": "Lisbon",
+        "country": "Portugal",
+        "flag": "\ud83c\uddf5\ud83c\uddf9",
+        "inTrekstak": true,
+        "photoUrl": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1200&q=80",
+        "intro": "Lisbon is my reset city this week \u2014 hills, miradouros, and dinner that runs late without trying too hard.",
+        "tips": [
+          "Ride Tram 28 early, before the midday crush.",
+          "Sunset from a miradouro beats any rooftop reservation scramble.",
+          "Order a pastel de nata where locals are actually queuing.",
+          "Walk Alfama downhill so your knees forgive you.",
+          "Leave one evening unplanned \u2014 the city fills the gap."
+        ],
+        "updatedAt": "2026-08-10T00:00:00.000Z"
+      },
+      "cityReviews": [
+        {
+          "id": "review-barcelona",
+          "city": "Barcelona",
+          "country": "Spain",
+          "flag": "\ud83c\uddea\ud83c\uddf8",
+          "inTrekstak": true,
+          "ratings": [
+            {
+              "category": "food",
+              "label": "Food & markets",
+              "stars": 5,
+              "why": "Tapas bars and La Boqueria still feel worth the hype if you go early."
+            },
+            {
+              "category": "vibe",
+              "label": "Atmosphere & vibe",
+              "stars": 5,
+              "why": "Neighborhoods change block by block \u2014 Gothic Quarter at dusk is the mood."
+            },
+            {
+              "category": "nightlife",
+              "label": "Nightlife",
+              "stars": 4,
+              "why": "El Born and Poble-sec stay fun without needing a club list."
+            },
+            {
+              "category": "value",
+              "label": "Value / budget",
+              "stars": 4,
+              "why": "Lunch menus and market grazing beat tourist-strip dinners."
+            }
+          ],
+          "updatedAt": "2026-08-10T12:00:00.000Z"
+        }
+      ],
+      "liveTrip": {
+        "id": "livetrip-lisbon",
+        "title": "Lisbon long weekend",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "flag": "\ud83c\uddf5\ud83c\uddf9",
+        "inTrekstak": true,
+        "startDate": "2026-08-12",
+        "endDate": "2026-08-16",
+        "status": "live",
+        "coverPhotoUrl": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1200&q=80",
+        "hook": "Follow along \u2014 food, hills, and unplanned evenings.",
+        "days": [
+          {
+            "id": "livetrip-day-1",
+            "dayNumber": 1,
+            "label": "Day 1 \u00b7 Arrival",
+            "headline": "Alfama first impressions",
+            "summary": "Landed, dropped bags, and walked straight into tile-lined alleys while the light was still soft.",
+            "tags": [
+              "food",
+              "walk",
+              "vibe"
+            ],
+            "photoUrl": "https://images.unsplash.com/photo-1585208795472-ef19f7411c5e?auto=format&fit=crop&w=1200&q=80",
+            "videoUrl": "",
+            "videoLinkUrl": "",
+            "publishedAt": "2026-08-12T18:00:00.000Z"
+          },
+          {
+            "id": "livetrip-day-2",
+            "dayNumber": 2,
+            "label": "Day 2",
+            "headline": "Bel\u00e9m and pasteis",
+            "summary": "Morning river walk, monastery queue skipped by showing up early, afternoon nap enforced by heat.",
+            "tags": [
+              "culture",
+              "food"
+            ],
+            "photoUrl": "",
+            "videoUrl": "",
+            "videoLinkUrl": "",
+            "publishedAt": "2026-08-13T18:00:00.000Z"
+          }
+        ],
+        "updatedAt": "2026-08-13T18:00:00.000Z"
+      }
+    }
+  ]
+}
